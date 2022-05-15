@@ -2,10 +2,10 @@ import React, {useState, useEffect, useRef} from 'react';
 import moment from "moment"  
 import { Box, Timer, CountTimer, CountDescription } from './CountDownStyles';
 
-const GeriSayim = () => {
+const CountDown = () => {
 
   const [date] = useState(() => {
-    return moment().add(1, "hours")
+    return moment().add(5, "hours")
   })
   const [hours, setHours] = useState("00");
   const [minutes, setMinutes] = useState("00");
@@ -16,9 +16,10 @@ const GeriSayim = () => {
   useEffect(() => {
     startedCountdown();
     return clearInterval(interval.current)
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [date] )
 
-  const startedCountdown = () => {
+  function startedCountdown() {
     interval = setInterval(() => {
       const now = moment();
       const distance = date - now;
@@ -27,30 +28,30 @@ const GeriSayim = () => {
       const minutes = moment.duration(distance).minutes();
       const seconds = moment.duration(distance).seconds();
 
-      if(distance < 0) {
-        clearInterval(interval.current)
+      if (distance < 0) {
+        clearInterval(interval.current);
       } else {
         setHours(hours);
         setMinutes(minutes);
-        setSeconds(seconds)
+        setSeconds(seconds);
       }
-    }, 1000)
+    }, 1000);
   }
   return (
     <Box>
       <Timer>
       <CountTimer>{hours}</CountTimer>
-      <CountDescription>Saat</CountDescription>
+      <CountDescription>Hours</CountDescription>
     </Timer>
     <Timer>
       <CountTimer>{minutes}</CountTimer>
-      <CountDescription>Dakika</CountDescription>
+      <CountDescription>Minutes</CountDescription>
     </Timer>
     <Timer>
       <CountTimer>{seconds}</CountTimer>
-      <CountDescription>Saniye</CountDescription>
+      <CountDescription>Seconds</CountDescription>
     </Timer>
     </Box>
   )
 }
-export default GeriSayim;
+export default CountDown;
