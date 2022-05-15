@@ -37,7 +37,7 @@ background: 50% 100% / 50% 50% no-repeat radial-gradient(ellipse at bottom, #fff
 	 -webkit-background-clip: text;
 	 background-clip: text;
 	 color: #4a4e69;
-	 font-size: 8vw; 
+	 font-size: 4vw; 
    text-align: center;
 	 animation: reveal 3000ms ease-in-out forwards 200ms, glow 2500ms linear infinite 2000ms;
 
