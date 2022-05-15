@@ -9,7 +9,7 @@ import {
   FaRegCalendarAlt,
 } from 'react-icons/fa'
 
-import SidebarItem from './SidebarItem'
+import SidebarItem from '../SidebarItem/SidebarItem'
 
 const Sidebar = ({ active }) => {
 
