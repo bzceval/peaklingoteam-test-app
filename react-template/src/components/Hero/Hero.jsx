@@ -1,9 +1,15 @@
-import React from 'react'
+import React from 'react' 
+import {Banner, Title, Image, Section} from './HeroStyles' 
 
-function Hero() {
+function index() {
   return (
-    <div>Hero</div>
+    <Section>
+    <Banner>
+    <Title>Welcome To My Playground!</Title>
+    <Image src="./assets/reactgirl.svg" alt="teamwork" /> 
+  </Banner>
+  </Section>
   )
 }
 
-export default Hero
+export default index

@@ -5,7 +5,7 @@ import { Box, Timer, CountTimer, CountDescription } from './CountDownStyles';
 const GeriSayim = () => {
 
   const [date] = useState(() => {
-    return moment().add(10, "hours")
+    return moment().add(1, "hours")
   })
   const [hours, setHours] = useState("00");
   const [minutes, setMinutes] = useState("00");
@@ -14,11 +14,11 @@ const GeriSayim = () => {
   let interval = useRef();
 
   useEffect(() => {
-    gerisayimiBaslat();
+    startedCountdown();
     return clearInterval(interval.current)
-  }, [date])
+  }, [date] )
 
-  const gerisayimiBaslat = () => {
+  const startedCountdown = () => {
     interval = setInterval(() => {
       const now = moment();
       const distance = date - now;
